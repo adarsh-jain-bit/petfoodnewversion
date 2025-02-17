@@ -1,0 +1,52 @@
+{
+  "name": "petfood",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "_moduleAliases": {
+    "@component": "src/components"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "^5.15.18",
+    "@mui/system": "^5.15.15",
+    "axios": "^1.7.2",
+    "cloudinary": "^2.3.1",
+    "firebase": "^10.12.2",
+    "formidable": "^3.5.1",
+    "formik": "^2.4.6",
+    "module-alias": "^2.2.3",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.4.5",
+    "mui-tel-input": "^5.1.2",
+    "multer": "^1.4.5-lts.1",
+    "next": "14.2.3",
+    "next-cloudinary": "^6.6.2",
+    "next-connect": "^1.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-otp-input": "^3.1.1",
+    "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.11",
+    "swiper": "^11.1.4",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/register": "^7.25.9",
+    "babel-plugin-styled-components": "^2.1.4",
+    "babel-preset-next": "^1.4.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
