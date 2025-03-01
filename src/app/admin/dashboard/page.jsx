@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Form from "../../../components/admin/Form"
 const Page = () => {
   return (

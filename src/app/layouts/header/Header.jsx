@@ -20,7 +20,7 @@ import {styles } from "./header.style"
 import { COLORS } from "../../../lib/constants/colors";
 import {  FONT_WEIGHT } from '../../../lib/constants/typography';
 import SimpleBackdrop from '@src/components/common/BackDrop';
-import { Autocomplete, Badge, Drawer, InputAdornment, Stack, TextField } from '@mui/material';
+import { Autocomplete, Badge, Drawer, Stack, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -106,8 +106,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const [cartOpen, setCartOpen] = useState(false);
 const [cartItems, setCartItems] = useState([]);
 
-const getTotalItems = (items) =>
-  items.reduce((acc, item) => acc + item.amount, 0);
+const getTotalItems = (items) => items.reduce((acc, item) => acc + item.amount, 0);
 
 const handleAddToCart = (clickedItem) => {
   setCartItems((prev) => {
@@ -141,9 +140,9 @@ const handleRemoveFromCart = (id) => {
 
 
   return (  
-  <>
-   
-    <AppBar  style={styles.container} sx={{zIndex : 12000 , position : "sticky!important"  }} >
+ <div>
+
+<AppBar  style={styles.container} sx={{zIndex : 12000 , position : "sticky!important"  }} >
     <Container maxWidth={theme.breakpoints.values.xl} >
       <Toolbar disableGutters>
       <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, width: '10%' }}>
@@ -291,8 +290,9 @@ const handleRemoveFromCart = (id) => {
   </AppBar>
 
   {navLinkValue && <SimpleBackdrop open={open} handleClose={handleClose}> <MegaMenu page={navLinkValue}/>  </SimpleBackdrop>}
- 
-  </>
+
+ </div>
+   
   )
 }
 

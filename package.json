@@ -42,11 +42,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
+    "@babel/eslint-parser": "^7.26.8",
     "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
     "babel-plugin-styled-components": "^2.1.4",
     "babel-preset-next": "^1.4.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.3",
+    "eslint-plugin-react": "^7.37.4"
   }
 }

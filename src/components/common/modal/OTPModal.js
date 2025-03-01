@@ -3,10 +3,7 @@ import React, { useState, useEffect } from "react";
 import OtpInput from "react-otp-input";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
@@ -14,7 +11,6 @@ import { OTPWrapper } from "./OTP.style";
 import LoadingButton from "@mui/lab/LoadingButton";
 import SaveIcon from "@mui/icons-material/Save";
 import { Box, Typography } from "@mui/material";
-import { COLORS } from "@src/lib/constants/colors";
 import { auth } from "../../../utiles/firebase.config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { Stack } from "@mui/system";
@@ -38,7 +34,7 @@ export default function OTPButton({ value }) {
       {
         size: "invisible",
         callback: (response) => {
-          console.log(response);
+          console.log("reCAPTCHA solved:", response);
         },
         "expired-callback": () => {
           console.log("Recaptcha expired, please try again.");
@@ -54,8 +50,8 @@ export default function OTPButton({ value }) {
     setOpen(true);
     setLoading(true)
     try {
-      const phoneNumber = await value.replace(/\s/g, "");
-      console.log(phoneNumber);
+      const phoneNumber = `+${value.replace(/\D/g, "")}`; // Remove non-numeric characters and prepend "+"
+console.log(phoneNumber); // Log to verify the format
       const appVerifier = window.recaptchaVerifier;
        let confirmation = await signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       toast.success("OTP Successfully Sent!", {
@@ -69,7 +65,7 @@ export default function OTPButton({ value }) {
       });
       setOpen(false)
       setLoading(false)
-      console.log(error);
+      console.log(error , loading);
     }
   };
 

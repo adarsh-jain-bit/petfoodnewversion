@@ -1,9 +1,9 @@
-import React from 'react'
+
 import MuiButton from '@mui/material/Button';
 import { COLORS } from '@src/lib/constants/colors';
+import React from 'react';
 
-
-const CustomButton = ({ text,  variant = "text", link = "#", size = "medium" , active = false })  => {
+const CustomButton = ({ text,  variant = "text", size = "medium" , active = false })  => {
   return (
     <MuiButton variant={variant}  size={size}  disabled={active} 
     sx={{

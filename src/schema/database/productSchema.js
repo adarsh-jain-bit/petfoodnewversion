@@ -1,30 +1,30 @@
 // src/schema/database/productSchema.js
 import mongoose from 'mongoose';
 
-const reviewSchema = new mongoose.Schema({
-  user: {
-    type: String,
-    required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-    min: 0,
-    max: 5,
-  },
-  comment: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+// const reviewSchema = new mongoose.Schema({
+//   user: {
+//     type: String,
+//     required: true,
+//   },
+//   rating: {
+//     type: Number,
+//     required: true,
+//     min: 0,
+//     max: 5,
+//   },
+//   comment: {
+//     type: String,
+//     required: true,
+//   },
+//   createdAt: {
+//     type: Date,
+//     default: Date.now,
+//   },
+//   updatedAt: {
+//     type: Date,
+//     default: Date.now,
+//   },
+// });
 
 const productSchema = new mongoose.Schema({
   product_name: {

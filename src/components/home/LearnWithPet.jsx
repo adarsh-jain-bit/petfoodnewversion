@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 import { SubSectionWrapper } from '@src/theme/Global.styles';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { COLORS } from '@src/lib/constants/colors';
 import {CardContainer} from "./LearnWithPet.style";
 const LearnWithPet = () => {
     let cardData = [1,2,3];

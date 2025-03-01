@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React from 'react';
 import { Footer, Content , Top, RedLink } from './footer.styles'
 import styled from "styled-components";
 import { Grid, ListItem, ListItemText, Typography , List, Button , Box, TextField, Tooltip, IconButton } from '@mui/material';
@@ -12,9 +12,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import theme from '@src/theme';
-import Image from 'next/image';
-import { SvgIconComponent } from '@mui/icons-material';
 import { generateRandomKey } from '@src/utiles/KeyGenerater';
 const footer = () => {
   
@@ -75,9 +72,9 @@ const footer = () => {
       },
     },
   });
-  const Demo = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.paper,
-  }));
+  // const Demo = styled('div')(({ theme }) => ({
+  //   backgroundColor: theme.palette.background.paper,
+  // }));
   return (
     <div>
       <Footer>

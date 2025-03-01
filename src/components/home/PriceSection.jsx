@@ -1,5 +1,6 @@
-import { Box, Grid, Typography } from '@mui/material'
-import React from 'react'
+import {Grid, Typography } from '@mui/material'
+import React from 'react';
+
 import {scaleUpTransition , SubSectionWrapper} from "../../theme/Global.styles"
 import { COLORS } from '@src/lib/constants/colors'
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';

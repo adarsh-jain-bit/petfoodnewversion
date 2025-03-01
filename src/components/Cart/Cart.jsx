@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
-import { CartItemType } from "../../../src/app/layouts/header/Header";
+
+import React from "react";
 import CartItem from "../CartItem/CartItem";
 
 import { Wrapper } from "./Cart.styles";

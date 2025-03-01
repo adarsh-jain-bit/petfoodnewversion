@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import ProductValidate from "../../../schema/validation/productSchema";
 import connectToDatabase from '../../../utiles/mongodb';
 
-export async function GET(req, res) {
+export async function GET() {
   await connectToDatabase();
 
   try {

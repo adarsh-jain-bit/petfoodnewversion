@@ -1,5 +1,4 @@
-import { Shuffle } from "@mui/icons-material";
-let shuffledColors
+
 const colors  = ["#DCF3FE", "#E4F6E5", "#FFE6E7", "#F0E3EC", "#FFF1E3"];
 
   const shuffle = (array)=> {
@@ -11,4 +10,4 @@ const colors  = ["#DCF3FE", "#E4F6E5", "#FFE6E7", "#F0E3EC", "#FFF1E3"];
 };
 
 
-export default shuffledColors = shuffle(colors);
+export default shuffle([...colors]);

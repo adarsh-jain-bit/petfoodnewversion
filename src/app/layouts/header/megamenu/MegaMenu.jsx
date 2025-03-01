@@ -1,5 +1,6 @@
-import { Paper, Typography } from '@mui/material';
-import React from 'react'
+import { Paper } from '@mui/material';
+import React from 'react';
+
 import MultipleMenu from "./MultipleMenu"
 import {style} from "./MegaMenu.style";
 

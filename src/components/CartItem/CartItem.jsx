@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
-import { CartItemType } from "../../../src/app/layouts/header/Header";
 
 import { Wrapper } from "./CartItem.styles";
+import React from "react";
 
 
 const CartItem = ({ item, addToCart, removeFromCart }) => {

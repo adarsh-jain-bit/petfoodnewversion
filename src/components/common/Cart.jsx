@@ -1,6 +1,9 @@
 "use client"
 // import { CartItemType } from "../App";
-import { Button  , Box, Stack, Typography, Rating} from "@mui/material";
+import React from "react";
+
+
+import {   Box, Stack, Typography, Rating} from "@mui/material";
 import { Wrapper } from "./Cart.styles";
 import Image from "next/image";
 import CustomButton from "./Button";

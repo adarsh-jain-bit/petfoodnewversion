@@ -1,7 +1,5 @@
 "use client"
-import { useState } from 'react';
-import Image from 'next/image';
-
+import React, { useState } from 'react';
 const ImageUpload = ({onImageUpload}) => {
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
@@ -16,7 +14,7 @@ const ImageUpload = ({onImageUpload}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(file);
+    console.log(file , imageUrl);
 
     try {
       const response = await fetch('/api/uploadimage', {

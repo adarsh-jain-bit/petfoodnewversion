@@ -6,8 +6,7 @@ import { FONT_FAMILY, FONT_SIZES, FONT_WEIGHT } from "../../../lib/constants/typ
 import { SPACING } from "../../../lib/constants/spacing";
 import { COLORS } from "../../../lib/constants/colors";
 import  {createTheme} from "../../../theme/index"
-import { ReactNode } from "react";
-
+import React from "react";
 const theme = createTheme();
 
 const myTheme = {

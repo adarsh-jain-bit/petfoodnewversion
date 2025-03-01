@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 import Card from "@src/components/common/Cart";
 import { Button, Grid, Typography } from "@mui/material";
 import { COLORS } from '@src/lib/constants/colors';

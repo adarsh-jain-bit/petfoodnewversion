@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
-import React from 'react'
+import React from 'react';
+
 import {scaleUpTransition , SubSectionWrapper} from "../../theme/Global.styles"
 import { COLORS } from '@src/lib/constants/colors'
 import SuffleColor from '@src/utiles/SuffleColor'

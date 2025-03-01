@@ -2,13 +2,9 @@
 import cloudinary from '../../../utiles/cloudnary';
 import { NextResponse } from 'next/server';
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb', // Adjust if needed
-    },
-  },
-};
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+export const maxDuration = 60; 
 
 export async function POST(req) {
   try {
