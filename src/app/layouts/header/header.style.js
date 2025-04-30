@@ -9,9 +9,9 @@ container : {
     
 },
 StyledButton : {
-  position: "fixed",
+  position: "absolute",
   zIndex: "100",
-  right: "25px",
+  right: "0px",
   top: "15px",
 }
 

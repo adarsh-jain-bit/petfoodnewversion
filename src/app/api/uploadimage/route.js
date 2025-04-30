@@ -11,15 +11,16 @@ export async function POST(req) {
     const body = await req.json(); // Parse the JSON body
     const { data } = body; // Extract the base64 string from the request body
 
-    if (!data) {
-      return NextResponse.json({ error: 'No data found in the request body' }, { status: 400 });
+    if (!Array.isArray(data) || data.length === 0) {
+      return NextResponse.json({ error: 'No images found' }, { status: 400 });
     }
 
-    const result = await cloudinary.uploader.upload(data, {
-      upload_preset: 'ml_default', 
-    });
-
-    return NextResponse.json({ url: result.secure_url });
+    const uploadedImages = [];
+for (const image of data) {
+  const result = await cloudinary.uploader.upload(image, { upload_preset: 'ml_default' });
+  uploadedImages.push(result.secure_url);
+}
+return NextResponse.json({ urls: uploadedImages });
   } catch (error) {
     console.error(`Upload error: ${error.message}`);
     return NextResponse.json({ error: error.message }, { status: 500 });

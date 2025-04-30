@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Footer, Content , Top, RedLink } from './footer.styles'
+import { Footer, Content , RedLink } from './footer.styles'
 import styled from "styled-components";
 import { Grid, ListItem, ListItemText, Typography , List, Button , Box, TextField, Tooltip, IconButton } from '@mui/material';
 import { COLORS } from "../../../lib/constants/colors";
@@ -72,15 +72,9 @@ const footer = () => {
       },
     },
   });
-  // const Demo = styled('div')(({ theme }) => ({
-  //   backgroundColor: theme.palette.background.paper,
-  // }));
   return (
-    <div>
       <Footer>
     <Content >
-      <Top >
-      </Top>
       <Grid container spacing={2} >
         {demoItems.map(({heading  , pages , id }) => (
        <>
@@ -133,7 +127,7 @@ const footer = () => {
     </Box>
     </Stack>
   </Footer>
-    </div>
+    
   )
 }
 

@@ -13,13 +13,14 @@ const Hero = () => {
     <>
       <Slider />
       <SubSectionWrapper>
-        <BrandSection />
+      <BrandSection category="cat" />
+
       </SubSectionWrapper>
       <SubSectionWrapper>
-        <BrandSection />
+      <BrandSection category="dog" />
       </SubSectionWrapper>
       <SubSectionWrapper>
-        <BrandSection />
+      <BrandSection category="bird" />
       </SubSectionWrapper>
       <SectionWrapper>
       <CategorySection/>

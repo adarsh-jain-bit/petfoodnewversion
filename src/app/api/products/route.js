@@ -21,18 +21,28 @@ export async function POST(req) {
   try {
     const formData = await req.formData();
     const body = Object.fromEntries(formData.entries());
-    const images = formData.getAll('images');
-    body.images = images;
-          console.log(images)
-    const validatedData = await ProductValidate.validate(body);
+  
+    const sizes = JSON.parse(body.sizes);  // Parse the sizes array
+    const images = JSON.parse(body.images); // Parse the images array
     
+  
+    body.sizes = sizes;
+    body.images = images;
+
+    console.log("body", body);
+    // Validate data
+    const validatedData = await ProductValidate.validate(body);
+
+    // Create the new product
     const newProduct = new Product(validatedData);
-    console.log("newProduct" , newProduct)
+    console.log("newProduct", newProduct);
+
+    // Save the product
     await newProduct.save();
     
     return NextResponse.json({ message: 'Product added successfully' });
   } catch (error) {
+    console.error("Error saving product:", error);
     return NextResponse.json({ message: error.message || 'Internal Server Error' });
   }
 }
-

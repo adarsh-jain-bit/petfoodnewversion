@@ -1,6 +1,6 @@
 export const createTypography = () => ({
   fontFamily:
-    '"Playfair Display", "Josefin Sans","Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    '"Atlassian Sans", "Josefin Sans","Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   body1: {
     fontFamily: "'Josefin Sans', sans-serif",
     fontSize: "1rem",
@@ -39,49 +39,49 @@ export const createTypography = () => ({
     textTransform: "uppercase",
   },
   h1: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     lineHeight: "28px",
     fontSize: "39px",
   },
   h2: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "25px",
     lineHeight: "59.48px",
   },
   h3: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "25px",
     lineHeight: "30px",
   },
   h4: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "20px",
     lineHeight: "38.13px",
   },
   h5: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "16px",
     lineHeight: "30px",
   },
   h6: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "14px",
     lineHeight: "24.4px",
   },
   h7: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "10px",
     lineHeight: "19.83px",
   },
   h8: {
-    fontFamily: "'Playfair Display', serif",
+    fontFamily: "'Atlassian Sans', serif",
     fontWeight: 700,
     fontSize: "8px",
     lineHeight: "15.25px",
