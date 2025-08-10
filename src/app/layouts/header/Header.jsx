@@ -148,7 +148,7 @@ const handleRemoveFromCart = (id) => {
       <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, width: '10%' }}>
     <Image 
         src={`/assets/mainlogo.webp`} 
-        layout="intrinsic"
+        
         width={218}
         height={80} 
         priority 

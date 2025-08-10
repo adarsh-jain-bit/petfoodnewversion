@@ -1,15 +1,15 @@
 import styled from "styled-components";
+import { COLORS } from "../../lib/constants/colors";
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   font-family: Arial, Helvetica, sans-serif;
-  border-bottom: 1px solid lightblue;
-  padding-bottom: 20px;
+  border: 1px solid ${COLORS.PRIMARY.main};
+  padding: 10px;
+  margin : 10px 0;
+border-radius: 10px;
 
-  div {
-    flex: 1;
-  }
 
   .information,
   .buttons {
@@ -18,8 +18,7 @@ export const Wrapper = styled.div`
   }
 
   img {
-    max-width: 80px;
+    max-width: 120px;
     object-fit: cover;
-    margin-left: 40px;
   }
 `;

@@ -5,8 +5,11 @@ import { Wrapper } from "./Cart.styles";
 import Image from "next/image";
 import CustomButton from "./Button";
 import Link from "next/link";
-
+import { addToCart } from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 const Card = ({ product }) => {
+  const dispatch = useDispatch();
   const isExternal = product.images?.[0]?.startsWith("http");
   const imageSrc = isExternal
     ? product.images[0]
@@ -39,6 +42,30 @@ const Card = ({ product }) => {
           variant="contained"
           size="medium"
           active={false}
+          onClick={() => {
+                  dispatch(addToCart({
+                    _id: product._id,
+                    name: product.product_name,
+                    brand: product.product_brand,
+                    price: product.product_price,
+                    oldPrice: product.product_oldprice,
+                    image: product.images[0],
+                    size: "1.2kg",
+                    quantity: 1
+                  }));
+                  toast.success("Product added to cart!", {
+                    position: "top-right",
+                    autoClose: 2000,
+                    zindex: 9999,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                 
+                }}
+        
         />
       </Wrapper>
   );

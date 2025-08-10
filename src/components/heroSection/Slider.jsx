@@ -36,7 +36,7 @@ export default function Slider() {
         <SwiperSlide key={generateRandomKey()} style={styles.swiperSlide}>
             <Image 
               src={`${props}`} 
-              layout="intrinsic"
+              layout='intrinsic'
               width={1000}
               height={1000} 
               priority 

@@ -6,6 +6,7 @@ import { FONT_FAMILY, FONT_SIZES, FONT_WEIGHT } from "../../../lib/constants/typ
 import { SPACING } from "../../../lib/constants/spacing";
 import { COLORS } from "../../../lib/constants/colors";
 import  {createTheme} from "../../../theme/index"
+import ReduxProvider from "../../../redux/ReduxProvider";
 import React from "react";
 const theme = createTheme();
 
@@ -24,9 +25,9 @@ function AppProviders({ children }) {
       <MuiThemeProvider theme={myTheme}>
         <ThemeProvider theme={myTheme}>
             <CssBaseline />
-                
+                <ReduxProvider>
                 {children}
-    
+                </ReduxProvider>
         </ThemeProvider>
       </MuiThemeProvider>
   );

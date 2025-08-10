@@ -1,5 +1,6 @@
 // src/schema/database/productSchema.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+
 
 // const reviewSchema = new mongoose.Schema({
 //   user: {
@@ -83,4 +84,4 @@ const productSchema = new mongoose.Schema({
 });
 
 const Product = mongoose.models.products || mongoose.model('products', productSchema);
-export default Product;
+module.exports = Product;

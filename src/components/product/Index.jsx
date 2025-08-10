@@ -16,18 +16,23 @@ import {
 } from "@mui/material";
 import AccordionStylingExpansion from "./Accordian";
 import { COLORS } from "../../lib/constants/colors";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+import {  toast } from 'react-toastify';
 
 const Index = ({product}) => {
+  const dispatch = useDispatch();
+
 console.log(product)
   const [quantity, setQuantity] = React.useState(1);
   const [selectedSize, setSelectedSize] = React.useState("1.2kg");
 
   const sizeOptions = [
-    { label: "1.2kg", value: "1.2kg", disabled: false },
-    { label: "3kg+1.2kg", value: "3kg+1.2kg", disabled: false },
-    { label: "10kg+1kg Free", value: "10kg+1kg", disabled: true },
-    { label: "15kg+3kg Free", value: "15kg+3kg", disabled: true },
-    { label: "20kg", value: "20kg", disabled: false },
+    { label: "100g", value: "1.2kg", disabled: false },
+    { label: "200g", value: "3kg+1.2kg", disabled: false },
+    { label: "500g", value: "10kg+1kg", disabled: true },
+    { label: "1kg", value: "15kg+3kg", disabled: true },
+    { label: "5kg", value: "20kg", disabled: false },
   ];
 
   return (
@@ -114,7 +119,7 @@ console.log(product)
               <MenuItem key={q + 1} value={q + 1}>
                 {q + 1}
               </MenuItem>
-            ))}
+            ))} 
           </Select>
         </FormControl>
 
@@ -133,7 +138,30 @@ console.log(product)
         </Box>
 
         {/* Add to Cart Button */}
-        <Button variant="contained" size="large"  fullWidth sx={{ borderRadius: 5 , backgroundColor : COLORS.PRIMARY.main}}>
+        <Button variant="contained" size="large"  fullWidth sx={{ borderRadius: 5 , backgroundColor : COLORS.PRIMARY.main}}
+         onClick={() => {
+          dispatch(addToCart({
+            _id: product._id,
+            name: product.product_name,
+            brand: product.product_brand,
+            price: product.product_price,
+            oldPrice: product.product_oldprice,
+            image: product.images[0], // just one image for cart preview
+            size: selectedSize,
+            quantity: quantity
+          }));
+          toast.success("Product added to cart!", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          setQuantity(1); 
+        }}
+        >
           Add to cart
         </Button>
         <AccordionStylingExpansion desc={product.product_description}/>
