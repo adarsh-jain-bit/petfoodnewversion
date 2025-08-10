@@ -75,13 +75,13 @@ export default function AccordionTransition({desc}) {
     <li>2-7 working days delivery for orders from other towns/cities in India.</li>
   </ul>
   
-  <Typography>Delivery times may be subject to stock availability, and delays caused by shipping partners which are beyond Petsy's control, and as such, delivery times may be extended. </Typography>
+  <Typography>Delivery times may be subject to stock availability, and delays caused by shipping partners which are beyond Petsys control, and as such, delivery times may be extended. </Typography>
   <br />
   <strong>Returns:</strong>
   <br />
   <Typography>This item is non-returnable. Exchange or store credit is available only for defective or damaged products within 7 days of the delivery date.</Typography>
   <br/>
-  For more details, please view our <a href="https://www.petsy.online/pages/returns-policy" target="_blank">Returns Policy</a>
+  For more details, please view our <a href="/" >Returns Policy</a>
           
   </Box>
         </AccordionDetails>

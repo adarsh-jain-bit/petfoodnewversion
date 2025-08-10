@@ -13,20 +13,20 @@ const Page = () => {
   const id = slug.split("-").pop();
   console.log("id", id);
   const [product, setProduct] = useState(null);
+   async function fetchData() {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`
+      );
+      const data = await res.json();
+      console.log("oo", data);
+      setProduct(data); // Set product data in state
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+    }
+  }
   useEffect(() => {
     if (id) {
-      async function fetchData() {
-        try {
-          const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`
-          );
-          const data = await res.json();
-          console.log("oo", data);
-          setProduct(data); // Set product data in state
-        } catch (error) {
-          console.error("Error fetching product data:", error);
-        }
-      }
 
       fetchData();
     }

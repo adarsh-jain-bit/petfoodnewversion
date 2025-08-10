@@ -5,7 +5,6 @@ import { Wrapper } from "./Cart.styles";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { COLORS } from "../../lib/constants/colors";
-import { bgcolor } from "@mui/system";
 
 const Cart = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,5 @@
-import React from 'react'
 import Checkout from '../../components/Checkout'
-
+import React from 'react'
 const page = () => {
   return (
     <div>
