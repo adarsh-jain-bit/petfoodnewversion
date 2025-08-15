@@ -5,6 +5,7 @@ import { Wrapper } from "./Cart.styles";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { COLORS } from "../../lib/constants/colors";
+import Checkout from "../Checkout";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -53,19 +54,7 @@ const Cart = () => {
           <Typography variant="h5" color={COLORS.PRIMARY.main}>Subtotal:</Typography>
           <Typography variant="h5">₹{calculateTotal(cartItems)}</Typography>
         </Stack>
-        <Button
-          variant="contained"
-          LinkComponent={"/checkout"}
-          sx={{
-            bgcolor: COLORS.PRIMARY.main,
-            mt: 1,
-            py: 1.5,
-            mb: 1,
-            "&:hover": { bgcolor: COLORS.PRIMARY.main }
-          }}
-        >
-          CheckOut Now
-        </Button>
+      <Checkout amount={calculateTotal(cartItems)}/>
       </Stack>
     </>
   )}

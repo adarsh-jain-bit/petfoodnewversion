@@ -16,7 +16,7 @@ const Page = () => {
    async function fetchData() {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/products/${id}`
+        `${process.env.NEXT_PUBLIC_BACKEND_URLL}/api/products/${id}`
       );
       const data = await res.json();
       console.log("oo", data);

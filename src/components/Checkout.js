@@ -1,6 +1,9 @@
 "use client";
 
-export default function Checkout() {
+import { Button } from "@mui/material";
+import { COLORS } from "../lib/constants/colors";
+
+export default function Checkout({amount}) {
   const loadRazorpay = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -10,7 +13,8 @@ export default function Checkout() {
       document.body.appendChild(script);
     }); 
   };
-
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URLL;
+console.log("back",backendUrl)
   const handlePayment = async () => {
     const res = await loadRazorpay("https://checkout.razorpay.com/v1/checkout.js");
 
@@ -20,14 +24,14 @@ export default function Checkout() {
     }
 
     // Create order on backend
-    const orderData = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment/order`, {
+    const orderData = await fetch(`${backendUrl}/api/payment/order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: 500 }) // INR 500
+      body: JSON.stringify({ amount: amount }) // INR 500
     }).then(res => res.json());
 
     const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       amount: orderData.amount,
       currency: orderData.currency,
       name: "Test Payment",
@@ -44,9 +48,20 @@ export default function Checkout() {
   };
 
   return (
-    <div>
-      <h2>Razorpay Payment</h2>
-      <button onClick={handlePayment}>Pay ₹500</button>
-    </div>
+    <>
+         <Button
+                  variant="contained"
+                onClick={handlePayment}
+                  sx={{
+                    bgcolor: COLORS.PRIMARY.main,
+                    mt: 1,
+                    py: 1.5,
+                    mb: 1,
+                    "&:hover": { bgcolor: COLORS.PRIMARY.main }
+                  }}
+                >
+                  CheckOut Now - {amount}
+                </Button>
+</>
   );
 }
